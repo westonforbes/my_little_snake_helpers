@@ -205,7 +205,9 @@ if __name__ == "__main__":
     console.clear()
 
     selection_int, selection_text = console.integer_only_menu_with_validation('Sample Menu',['option 1', 'option 2', 'option 3', 'exit'])
-    if selection_text == 'exit': return
+    if selection_text == 'exit': 
+        import sys
+        sys.exit(0)
     
 
     console.fancy_print("\nthis is <FUNCTION>fancy_print()</FUNCTION>, welcome to <CLASS>WFConsole</CLASS> class test script. we just used <FUNCTION>clear()</FUNCTION> to clear the console.")
