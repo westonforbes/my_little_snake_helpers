@@ -1,5 +1,6 @@
 import os
 import re
+import pandas as pd
 
 class WFConsole():
 
@@ -48,14 +49,26 @@ class WFConsole():
 
     # Tagged style modifiers.----------------------------------------------------------------------
     UNDERLINE = "\033[4m"
-    GOOD_TEXT = GREEN
-    BAD_TEXT = RED
-    WARNING_TEXT = YELLOW
-    ACTION_TEXT = CYAN
-    INFO_TEXT = MAGENTA
+    GOOD = GREEN
+    BAD = RED
+    WARNING = YELLOW
+    INFO = MAGENTA
+    
     FUNCTION = BLUE + UNDERLINE
     CLASS = BLUE + UNDERLINE
-    KEY = MAGENTA + BG_GREEN
+    DATA = BRIGHT_CYAN
+    
+    
+    # Menu style modifiers.------------------------------------------------------------------------
+    MENU_TITLE = MAGENTA
+    MENU_ITEM = YELLOW
+    MENU_KEY = GREEN
+    MENU_NAV_ITEM = CYAN
+    MENU_SELECTION_PROMPT = CYAN
+    
+    KEYBOARD_KEY = MAGENTA + BG_GREEN
+    OPTION = GREEN
+    INPUT_PROMPT = CYAN
 
     def __init__(self):
         """
@@ -81,12 +94,46 @@ class WFConsole():
         # Assign the resulting dictionary to the instance variable.
         self.TAG_MAP = tag_map
 
+
     def clear(self) -> None:
         """
         Clears the terminal screen using an OS-specific command.
         Works on both Windows and Unix-like systems.
         """
         os.system('cls' if os.name == 'nt' else 'clear')
+
+    def paginated_print(self, df: pd.DataFrame, page_size: int = 10):
+        """
+        Pretty prints a DataFrame in chunks, with row numbers, prompting the user to press Enter to continue.
+
+        Args:
+            df (pd.DataFrame): The DataFrame to print.
+            page_size (int): Number of rows to display per page.
+        """
+        total_rows = len(df)
+        pages = (total_rows + page_size - 1) // page_size  # Ceiling division
+        row_num_width = len(str(total_rows - 1))  # Zero-padding width
+
+        for page in range(pages):
+            start = page * page_size
+            end = start + page_size
+            chunk = df.iloc[start:end].copy()
+
+            # Create a row number column with zero-padded values
+            row_numbers = [str(i).zfill(row_num_width) for i in range(start, min(end, total_rows))]
+            chunk.insert(0, 'Row', row_numbers)
+
+            self.clear()
+            self.fancy_print(f"<DATA>Displaying rows {start+1} to {min(end, total_rows)} of {total_rows}\n</DATA>")
+            self.fancy_print(f"<DATA>{chunk.to_string(index=False)}</DATA>")
+
+            if end < total_rows:
+                result = self.fancy_input(f"<INPUT_PROMPT>type <KEYBOARD_KEY>n</KEYBOARD_KEY><INPUT_PROMPT> to quit or press </INPUT_PROMPT><KEYBOARD_KEY>ENTER</KEYBOARD_KEY><INPUT_PROMPT> to continue... </INPUT_PROMPT>")
+                if result.strip().lower() == 'n':
+                    break
+            else:
+                self.press_enter_pause()
+
 
     def fancy_print(self, text: str) -> None:
         """
@@ -144,7 +191,7 @@ class WFConsole():
         self.clear()
 
         # Print the menu title.
-        self.fancy_print(f"\n<RED>---</RED><MAGENTA>{title}</MAGENTA><RED>---</RED>")
+        self.fancy_print(f"\n<MENU_TITLE>---{title}---</MENU_TITLE>")
 
         # Check that item_list is a list of strings.
         if not (isinstance(item_list, list) and all(isinstance(item, str) for item in item_list)): raise ValueError('item_list is not a list of strings.')
@@ -163,7 +210,7 @@ class WFConsole():
         for item in item_list:
 
             # Print out the menu option.
-            self.fancy_print(f"<GREEN>[{i:02}]</GREEN> - <YELLOW>{item}</YELLOW>")
+            self.fancy_print(f"<MENU_KEY>[{i:02}]</MENU_KEY> - <MENU_ITEM>{item}</MENU_ITEM>")
 
             # Increment the iterator.
             i += 1
@@ -173,7 +220,7 @@ class WFConsole():
             self.fancy_print(append_str)
 
         # Get the users selection.
-        return self.fancy_input(f"\n<CYAN>{input_message}</CYAN>")
+        return self.fancy_input(f"\n<MENU_SELECTION_PROMPT>{input_message}</MENU_SELECTION_PROMPT>")
 
     def integer_only_menu_with_validation(self, title: str, item_list: list[str], input_message: str ='enter selection: ', prepend_str: str = None, append_str: str = None) -> int:
 
@@ -197,34 +244,19 @@ class WFConsole():
                 
                 # If the input is a valid integer but is out of range...
                 else:
-                    self.fancy_input("<BAD>\nyour input is out of the menu range. Press </BAD><KEY>ENTER</KEY><BAD> to continue...</BAD>")
+                    self.fancy_print("<BAD>\nyour input is out of the menu range.</BAD>")
+                    self.press_enter_pause()
             
             # If the input is not a integer...
             except ValueError:
-                self.fancy_input("<BAD>\nyour input is non-numeric. Press </BAD><KEY>ENTER</KEY><BAD> to continue...</BAD>")
+                self.fancy_print("<BAD>\nyour input is non-numeric.</BAD>")
+                self.press_enter_pause()
 
     def press_enter_pause(self):
         """
         Pauses the program until the user presses Enter.
         """
-        self.fancy_input("<ACTION_TEXT>press <KEY>ENTER</KEY><ACTION_TEXT> to continue... </ACTION_TEXT>")
+        self.fancy_input("<INPUT_PROMPT>press <KEYBOARD_KEY>ENTER</KEYBOARD_KEY><INPUT_PROMPT> to continue... </INPUT_PROMPT>")
         
-
 if __name__ == "__main__":
-
-    # Create instance of WFConsole.
-    console = WFConsole()
-
-    # Clear the console.
-    console.clear()
-
-    selection_int, selection_text = console.integer_only_menu_with_validation('Sample Menu',['option 1', 'option 2', 'option 3', 'exit'])
-    if selection_text == 'exit': 
-        import sys
-        sys.exit(0)
-    
-
-    console.fancy_print("\nthis is <FUNCTION>fancy_print()</FUNCTION>, welcome to <CLASS>WFConsole</CLASS> class test script. we just used <FUNCTION>clear()</FUNCTION> to clear the console.")
-    text = f"FYI, layered <RED>f strings</RED> work with <FUNCTION>fancy_print()</FUNCTION> and <FUNCTION>fancy_input()</FUNCTION>!"
-    console.fancy_print(f"{text}")
-    console.fancy_input("\nthis is <FUNCTION>fancy_input()</FUNCTION>, press <KEY>ENTER</KEY> to continue...")
+    pass

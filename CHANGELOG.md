@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.4 - 2025-05-23
+* Continued to refine csv_menu and added pagenated_print method to wf_console.
+
 ## 0.1.3 - 2025-05-23
 * Added unit test for wf_file_data_processor.py
 
