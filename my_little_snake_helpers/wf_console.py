@@ -102,6 +102,7 @@ class WFConsole():
         """
         os.system('cls' if os.name == 'nt' else 'clear')
 
+
     def paginated_print(self, df: pd.DataFrame, page_size: int = 10):
         """
         Pretty prints a DataFrame in chunks, with row numbers, prompting the user to press Enter to continue.
@@ -153,6 +154,7 @@ class WFConsole():
         styled_text = pattern.sub(replacer, text)
         print(styled_text + self.RESET)
 
+
     def fancy_input(self, text: str) -> str:
         """
         Displays styled input prompt by replacing formatting tags with ANSI codes,
@@ -173,7 +175,8 @@ class WFConsole():
         pattern = re.compile(r'<(/?)(\w+)>')
         styled_text = pattern.sub(replacer, text)
         return input(styled_text + self.RESET)
-    
+
+
     def menu(self, title: str, item_list: list[str], input_message: str ='enter selection: ',  prepend_str: str = None, append_str: str = None) -> str:
         """
         Creates a simple menu and returns the user's selection (input is not validated).
@@ -222,6 +225,7 @@ class WFConsole():
         # Get the users selection.
         return self.fancy_input(f"\n<MENU_SELECTION_PROMPT>{input_message}</MENU_SELECTION_PROMPT>")
 
+
     def integer_only_menu_with_validation(self, title: str, item_list: list[str], input_message: str ='enter selection: ', prepend_str: str = None, append_str: str = None) -> int:
 
         # Loop until we get a valid input.
@@ -251,6 +255,7 @@ class WFConsole():
             except ValueError:
                 self.fancy_print("<BAD>\nyour input is non-numeric.</BAD>")
                 self.press_enter_pause()
+
 
     def press_enter_pause(self):
         """
