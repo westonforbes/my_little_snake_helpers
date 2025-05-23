@@ -127,7 +127,7 @@ class WFConsole():
         styled_text = pattern.sub(replacer, text)
         return input(styled_text + self.RESET)
     
-    def menu(self, title: str, item_list: list[str], input_message: str ='enter selection: ') -> str:
+    def menu(self, title: str, item_list: list[str], input_message: str ='enter selection: ',  prepend_str: str = None, append_str: str = None) -> str:
         """
         Creates a simple menu and returns the user's selection (input is not validated).
         
@@ -144,10 +144,17 @@ class WFConsole():
         self.clear()
 
         # Print the menu title.
-        self.fancy_print(f"\n<RED>---</RED><MAGENTA>{title}</MAGENTA><RED>---</RED>\n")
+        self.fancy_print(f"\n<RED>---</RED><MAGENTA>{title}</MAGENTA><RED>---</RED>")
 
         # Check that item_list is a list of strings.
         if not (isinstance(item_list, list) and all(isinstance(item, str) for item in item_list)): raise ValueError('item_list is not a list of strings.')
+
+        
+        if prepend_str is not None:
+            # If prepend_str is provided, print it.
+            self.fancy_print(prepend_str)
+        
+        self.fancy_print("")
 
         # Iterator.
         i = 1
@@ -161,19 +168,20 @@ class WFConsole():
             # Increment the iterator.
             i += 1
         
+        if append_str is not None:
+            # If append_str is provided, print it.
+            self.fancy_print(append_str)
+
         # Get the users selection.
         return self.fancy_input(f"\n<CYAN>{input_message}</CYAN>")
 
-    def integer_only_menu_with_validation(self, title: str, item_list: list[str], input_message: str ='enter selection: ') -> int:
+    def integer_only_menu_with_validation(self, title: str, item_list: list[str], input_message: str ='enter selection: ', prepend_str: str = None, append_str: str = None) -> int:
 
         # Loop until we get a valid input.
         while True:
 
             # Call the menu function which renders the menu and input message without validating the input.
-            selection = self.menu(title, item_list, input_message)
-
-            # Clear the terminal.
-            self.clear()
+            selection = self.menu(title, item_list, input_message, prepend_str, append_str)
 
             # Try protect...
             try:
@@ -194,6 +202,12 @@ class WFConsole():
             # If the input is not a integer...
             except ValueError:
                 self.fancy_input("<BAD>\nyour input is non-numeric. Press </BAD><KEY>ENTER</KEY><BAD> to continue...</BAD>")
+
+    def press_enter_pause(self):
+        """
+        Pauses the program until the user presses Enter.
+        """
+        self.fancy_input("<ACTION_TEXT>press <KEY>ENTER</KEY><ACTION_TEXT> to continue... </ACTION_TEXT>")
         
 
 if __name__ == "__main__":

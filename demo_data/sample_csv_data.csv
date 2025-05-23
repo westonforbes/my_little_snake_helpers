@@ -1,0 +1,31 @@
+TransactionID,Date,CustomerName,Product,Category,Quantity,UnitPrice,Discount,SalesRep,Region
+97df5005-a2a3-432d-9829-d0cae9afff66,2024-06-02,Deborah Rose,Keyboard,Electronics,1,1125.25,0.07,Bradley Espinoza,South
+abbdd38f-f301-45a5-a105-dd3dab4c2507,2025-03-16,Alicia Fields,Keyboard,Electronics,5,176.06,0.13,Jessica Gonzalez,North
+4ab7814a-a338-4664-91a2-e368945279c8,2025-02-06,Peter Parks,Laptop,Electronics,2,782.77,0.01,Mercedes Roberson,South
+c4a0dc12-535d-4f6c-97c0-d08a29d08d34,2024-08-13,Timothy Phillips,Keyboard,Accessories,2,701.35,0.08,Holly Ford,North
+1a4ede6b-73af-42a7-81db-0a19057dc167,2025-01-18,Jonathan Morris,Smartphone,Accessories,3,452.91,0.06,Ashley Black,East
+6319f896-d99b-4664-a2f5-f2d1795f812f,2025-03-04,Kimberly Lowery,Laptop,Electronics,4,190.24,0.25,Jeffery Jones,East
+6d636393-b2cf-4bb6-885b-b5d87419c1cd,2024-05-25,Stephanie Cook,Laptop,Accessories,5,231.0,0.28,Peter Carpenter,North
+8809b718-6f8c-43d1-a5bf-8e3e84338901,2024-12-26,Brian Hunter,Monitor,Accessories,5,1333.91,0.11,Joseph Kelly,South
+03002b0a-ddb1-4347-a848-307d72084603,2024-06-03,Veronica Lane,Keyboard,Electronics,1,1008.83,0.23,Wendy Davidson,North
+ea5e2df3-d0a7-43a9-b961-72c07fcf13d0,2025-01-30,Mr. Clifford Wu DDS,Smartphone,Electronics,4,453.06,0.19,Danny Harris,East
+4e9f382b-49d4-459e-b58c-0bc4c17e85b3,2024-09-11,Michael Lopez,Smartphone,Accessories,3,353.79,0.08,Karen Miller,North
+d32d85b3-3bc2-42e4-a7b5-f76ce27853e8,2024-10-21,Briana Pacheco,Monitor,Electronics,5,1107.23,0.05,Samantha Levy,West
+44b88669-dfed-4af2-aa76-4bc43b157a47,2024-07-13,Troy King,Tablet,Electronics,3,1272.14,0.23,Karen Morris,South
+3623fe2a-4c17-48aa-aabe-27da131adaec,2024-07-02,Kayla Smith,Laptop,Accessories,4,438.22,0.06,Michael Thornton,East
+05c37830-54cb-495f-a2d6-a34ce7e1d488,2025-03-16,Steven Mclaughlin,Smartphone,Accessories,4,1332.79,0.19,Crystal Porter,South
+2f41fd83-94b0-4a80-98ef-194f563deb93,2024-08-04,Tamara Wade,Tablet,Electronics,2,1130.23,0.16,Matthew Martin,West
+f43cba7a-6a3d-4139-acba-386cc2d255c1,2024-08-10,Mr. Ian Hamilton,Monitor,Accessories,3,368.02,0.3,Jonathan Mcintosh,West
+6544c952-743b-4ac3-95ec-09b0dd9369e1,2025-03-28,Rita Mcclain,Laptop,Electronics,1,271.62,0.05,Wayne Cox,West
+f07eeb00-caaf-434e-b21a-30bd04be6262,2025-05-16,Derek Rhodes,Monitor,Electronics,4,603.35,0.3,Shawn Baxter,East
+91e605da-c38a-4fec-93f4-e47abaca4c98,2025-02-28,Charles Mcdonald,Monitor,Electronics,1,1038.48,0.16,Kevin Singh,East
+b3ed8f71-e4f2-4342-9072-ac7a4a9f30e0,2024-10-14,Kenneth White,Keyboard,Accessories,1,475.58,0.05,Kathleen Parks,North
+8e2cf63f-38be-4d60-8eff-0cbfb4cf1113,2025-01-06,Keith Macias,Keyboard,Accessories,5,1154.85,0.15,Anthony Conner,North
+c5efba62-22bc-4ffd-b772-54e504bf4dc5,2025-01-17,Derek Ellison,Keyboard,Accessories,5,933.01,0.05,Ronald Campbell,South
+9615db3a-1a08-4fee-a665-5fa9a81dc7f0,2024-08-20,Christie Robbins,Monitor,Electronics,5,520.03,0.01,Barbara Hall,East
+e85c902f-c5e9-4005-bac0-1471435304c5,2024-12-05,Amber Wilkerson,Tablet,Electronics,1,399.26,0.17,Rebecca Martin,North
+919db5e3-66e8-402c-a233-780859e57825,2024-07-15,Dale Barrera,Laptop,Accessories,1,1468.08,0.16,Kristen Berry,South
+81f17783-4c21-463e-a2f5-b56ea80e3b95,2024-11-26,Maria Avila,Smartphone,Accessories,5,289.43,0.16,Lisa Cantrell,West
+47e049f9-0f28-48f7-be8f-493a37ce5635,2024-10-21,Amanda Berry,Smartphone,Electronics,3,628.54,0.2,Susan Schwartz,East
+c2599f5f-2d9a-4dff-9ba6-3a5137ccf48e,2025-05-10,Mark Perry,Headphones,Accessories,1,409.46,0.02,Stephen Ford,North
+5e04c28f-a71f-4c71-9889-8d6460a01ce1,2024-06-17,Jasmine Martinez,Monitor,Electronics,5,369.32,0.02,Brittney Cole,North
