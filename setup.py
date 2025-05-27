@@ -4,7 +4,7 @@ setup(
     name='my_little_snake_helpers',
     version='0.1.6',
     packages=find_packages(),
-    install_requires=['tkinter'],
+    install_requires=[],
     description='My toolkit of little python helpers.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',

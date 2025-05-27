@@ -1,5 +1,8 @@
 # Changelog
 
+# 0.1.7 - 2025-05-27
+* Removed tkinter from setup.py 'install_requires' as its not a PyPI package...doh.
+
 # 0.1.6 - 2025-05-27
 * Made csv_menu into a class.
 
