@@ -1,8 +1,7 @@
-import os
-import re
-import pandas as pd
-
 class WFConsole():
+    import os
+    import re
+    import pandas as pd
 
     # Reset.---------------------------------------------------------------------------------------
     RESET = "\033[0m"

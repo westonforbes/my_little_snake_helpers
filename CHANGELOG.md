@@ -1,5 +1,8 @@
 # Changelog
 
+# 0.1.8 - 2025-05-27
+* Brought the imports into the classes of modules so they import correctly.
+
 # 0.1.7 - 2025-05-27
 * Removed tkinter from setup.py 'install_requires' as its not a PyPI package...doh.
 
