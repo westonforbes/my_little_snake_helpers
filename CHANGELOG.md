@@ -1,5 +1,10 @@
 # Changelog
 
+# 0.1.6 - 2025-05-27
+* Made csv_menu into a class.
+
+## 0.1.5 - Undocumented
+
 ## 0.1.4 - 2025-05-23
 * Continued to refine csv_menu and added pagenated_print method to wf_console.
 
