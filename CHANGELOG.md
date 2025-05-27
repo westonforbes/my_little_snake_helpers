@@ -1,5 +1,8 @@
 # Changelog
 
+# 0.1.9 - 2025-05-27
+* LOL, jk. that was a bad idea. Reverted.
+
 # 0.1.8 - 2025-05-27
 * Brought the imports into the classes of modules so they import correctly.
 

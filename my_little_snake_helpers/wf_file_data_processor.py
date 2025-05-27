@@ -1,9 +1,10 @@
-class WFFileDataProcessor():
-    import tkinter as tk
-    from tkinter import filedialog
-    import os
-    import pandas as pd
+import tkinter as tk
+from tkinter import filedialog
+import os
+import pandas as pd
     
+class WFFileDataProcessor():
+
     """
     This class contains methods for file processing.
     """
