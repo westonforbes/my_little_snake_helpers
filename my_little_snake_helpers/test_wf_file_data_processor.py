@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch, MagicMock
 import os
-from wf_file_data_processor import WFFileDataProcessor
+from .wf_file_data_processor import WFFileDataProcessor
 
 class TestMethod_select_csv(unittest.TestCase):
     

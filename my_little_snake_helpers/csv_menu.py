@@ -2,8 +2,8 @@
 # It uses the WFConsole class for console interactions and the WFFileDataProcessor class for file operations.
 # The script allows users to select a CSV file, load it into a DataFrame, and unload it.
 import os
-from wf_console import WFConsole
-from wf_file_data_processor import WFFileDataProcessor
+from .wf_console import WFConsole
+from .wf_file_data_processor import WFFileDataProcessor
 
 class CSVMenu:
 

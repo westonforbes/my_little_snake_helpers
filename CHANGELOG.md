@@ -1,5 +1,8 @@
 # Changelog
 
+# 0.1.10 - 2025-05-27
+* Trying to get my relative imports correct.
+
 # 0.1.9 - 2025-05-27
 * LOL, jk. that was a bad idea. Reverted.
 
