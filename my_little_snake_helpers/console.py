@@ -2,7 +2,7 @@ import os
 import re
 import pandas as pd
 
-class WFConsole():
+class Console():
 
     # Reset.---------------------------------------------------------------------------------------
     RESET = "\033[0m"

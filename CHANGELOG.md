@@ -1,5 +1,10 @@
 # Changelog
 
+# 0.1.11 - 2025-05-28
+* Think i unfucked all my module and imports issues.
+* Renamed some modules.
+* Added launch.json for menu_csv.py
+
 # 0.1.10 - 2025-05-27
 * Trying to get my relative imports correct.
 

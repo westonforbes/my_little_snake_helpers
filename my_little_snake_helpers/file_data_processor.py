@@ -3,7 +3,7 @@ from tkinter import filedialog
 import os
 import pandas as pd
     
-class WFFileDataProcessor():
+class FileDataProcessor():
 
     """
     This class contains methods for file processing.
