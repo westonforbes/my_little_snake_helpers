@@ -1,5 +1,8 @@
 # Changelog
 
+# 0.1.13 - 2025-05-28
+* Incremental changes.
+
 # 0.1.12 - 2025-05-28
 * Working on curses gui stuff. Got to a good point. gonna make some major changes, pushing before messing things up.
 
