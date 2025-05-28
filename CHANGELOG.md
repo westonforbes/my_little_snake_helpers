@@ -1,5 +1,8 @@
 # Changelog
 
+# 0.1.12 - 2025-05-28
+* Working on curses gui stuff. Got to a good point. gonna make some major changes, pushing before messing things up.
+
 # 0.1.11 - 2025-05-28
 * Think i unfucked all my module and imports issues.
 * Renamed some modules.
