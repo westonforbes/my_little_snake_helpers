@@ -1,11 +1,21 @@
 {
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "Run menu_csv.py as module",
             "type": "debugpy",
             "request": "launch",
             "module": "my_little_snake_helpers.menu_csv",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        }
+        ,
+        {
+            "name": "Run menu_image.py as module",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "my_little_snake_helpers.menu_image",
             "cwd": "${workspaceFolder}",
             "console": "integratedTerminal"
         }
