@@ -1,5 +1,6 @@
 import curses  # For Windows, install windows-curses
 
+"""⚠️ This class is under development and not intended for production use. It still has potential but it still has lots to go. Mothballed for now. ⚠️"""
 class SimpleMenu:
 
     def __init__(self):

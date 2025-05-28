@@ -1,5 +1,8 @@
 # Changelog
 
+# 0.1.14 - 2025-05-28
+* Archived the curses GUI stuff for now by moving to archive folder.
+
 # 0.1.13 - 2025-05-28
 * Incremental changes.
 
