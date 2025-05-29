@@ -1,5 +1,8 @@
 # Changelog
 
+# 0.1.16 - 2025-05-29
+* Added save file dialog to file_data_processor module.
+
 # 0.1.15 - 2025-05-28
 * Added menu_image module!
 

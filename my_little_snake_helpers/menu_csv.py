@@ -87,7 +87,7 @@ class MenuCSV:
             if selection_text == 'load csv':
                 
                 # Open a file dialog to select a CSV file.
-                csv_file_path = file_processor.select_csv(starting_dir)
+                csv_file_path = file_processor.select_file(starting_dir, filetypes=[("CSV files", "*.csv")])
 
                 if csv_file_path:
                     try:
