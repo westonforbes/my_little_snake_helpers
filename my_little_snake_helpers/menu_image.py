@@ -50,7 +50,7 @@ class MenuImage:
             if selection_text == 'load image':
                 
                 # Open a file dialog to select a image file.
-                image_file_path = file_processor.select_file(starting_dir, filetypes = ("Image files", "*.png;*.jpg;*.jpeg;*.bmp;*.gif"))
+                image_file_path = file_processor.open_file(starting_dir, filetypes = ("Image files", "*.png;*.jpg;*.jpeg;*.bmp;*.gif"))
 
                 if image_file_path:
                     try:

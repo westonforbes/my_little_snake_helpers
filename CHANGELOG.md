@@ -1,5 +1,8 @@
 # Changelog
 
+# 0.1.17 - 2025-05-29
+* Oops forgot to update some method names.
+
 # 0.1.16 - 2025-05-29
 * Added save file dialog to file_data_processor module.
 
