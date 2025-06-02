@@ -1,5 +1,8 @@
 # Changelog
 
+# 0.1.18 - 2025-06-02
+* Updated return type on integer_only_menu_with_validation()
+
 # 0.1.17 - 2025-05-29
 * Oops forgot to update some method names.
 
