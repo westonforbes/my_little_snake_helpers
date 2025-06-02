@@ -1,5 +1,8 @@
 # Changelog
 
+# 0.1.19 - 2025-06-02
+* Added remove_keys_from_json(), documented in file_data_processor wiki.
+
 # 0.1.18 - 2025-06-02
 * Updated return type on integer_only_menu_with_validation()
 

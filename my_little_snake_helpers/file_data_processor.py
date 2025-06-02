@@ -167,6 +167,22 @@ class FileDataProcessor():
         except Exception as e:
             raise RuntimeError(f"An error occurred while reading the csv: {e}")
 
+    def remove_keys_from_json(self, data, keys_to_remove):
+        """
+        Removes specified keys from each dictionary in a list.
+
+        Parameters:
+        - data: list of dictionaries (JSON-like)
+        - keys_to_remove: list of keys to be removed from each dictionary
+
+        Returns:
+        - The cleaned list of dictionaries
+        """
+        for item in data:
+            for key in keys_to_remove:
+                item.pop(key, None)  # Safely remove key if it exists.
+        return data
+
 if __name__ == "__main__":
     try:
         from .console import Console
