@@ -1,5 +1,8 @@
 # Changelog
 
+# 0.1.20 - 2025-06-03
+* Rolled back the python requirement to 3.11.2 so I can run this on the current linux arm distro.
+
 # 0.1.19 - 2025-06-02
 * Added remove_keys_from_json(), documented in file_data_processor wiki.
 
